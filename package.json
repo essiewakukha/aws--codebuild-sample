@@ -1,0 +1,8 @@
+{
+  "name": "aws-codebuild-sample",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo Building project...",
+    "test": "echo Running tests... && exit 0"
+  }
+}
