@@ -1,0 +1,47 @@
+# Defines the buildspec version format
+version: 0.2
+
+# Defines the build phases
+phases:
+  # Install phase (runs first)
+  install:
+    # Commands to run during install phase
+    commands:
+      # Prints a message to the log
+      - echo Installing dependencies...
+      # Installs project dependencies
+      - npm install
+
+  # Pre-build phase (runs before build)
+  pre_build:
+    # Commands to run during pre-build phase
+    commands:
+      # Prints a message to the log
+      - echo Running tests...
+      # Runs project tests
+      - npm test
+
+  # Build phase (main build step)
+  build:
+    # Commands to run during build phase
+    commands:
+      # Prints a message to the log
+      - echo Building project...
+      # Builds the project
+      - npm run build
+
+  # Post-build phase (runs after build)
+  post_build:
+    # Commands to run during post-build phase
+    commands:
+      # Prints completion message with date
+      - echo Build completed on `date`
+
+# Defines which files to store after build
+artifacts:
+  # Files to include as artifacts
+  files:
+    # Includes all files
+    - '**/*'
+  # Removes directory paths from stored artifacts
+  discard-paths: yes
